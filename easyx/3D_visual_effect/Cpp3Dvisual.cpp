@@ -9,18 +9,10 @@ HWND hwnd=FindWindow("ConsoleWindowClass",NULL);
 IMAGE back(640,480);
 void outputpoint(int i,int j,int z);
 void change();
-///////////////////////////////////////////////////////////////////
- /*DWORD WINAPI MyThread1(PVOID pvParam)
-{
-	while(1)
-	return 0;	
-}*/
-///////////////////////////////////////////////////////////////////
 main()
 {
 	initgraph(640,480);
 	setwritemode(R2_XORPEN);
-	//HANDLE hThread1 = CreateThread(NULL, 0, MyThread1, NULL, 0, NULL);
 	while(1)
 	{
 	SetWorkingImage(&back);
@@ -28,7 +20,6 @@ main()
 	float x1,y1,z1;
 	for(int i=-80;i<=80;i++)
 	for(int j=-80;j<=80;j++) 
-	//for(int k=-50;k<=50;k++)
 		{
 			switch(functiontype)
 			{
@@ -36,11 +27,10 @@ main()
 				outputpoint(i,j,100*sin(sqrt((i/40.0)*(i/40.0)+(j/40.0)*(j/40.0))));
 				break;
 			case 2:
-				//if((x1*x1+9.0/4*(y1*y1)+z1*z1-1)*(x1*x1+9.0/4*(y1*y1)+z1*z1-1)*(x1*x1+9.0/4*(y1*y1)+z1*z1-1)-x1*x1*z1*z1*z1-9.0/1*(y1*y1*z1*z1*z1)>=0)
 				outputpoint(i,j,(i+j)/((i-j)/1.0));
 				break;
 			case 3:
-				outputpoint(i,j,50*i/(j/1.0));
+					outputpoint(i,j,50*i/(j/1.0));
 				break;
 			default:break;
 			}		
